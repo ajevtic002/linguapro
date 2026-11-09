@@ -1,0 +1,138 @@
+/* =========================================================
+   responsive.css – prilagođavanje različitim ekranima
+   Pristup: mobile-first (osnovni stilovi su za telefon,
+   a media upiti dodaju pravila za veće ekrane)
+   ========================================================= */
+
+/* Tablet: od 768px */
+@media (min-width: 768px) {
+  h1 { font-size: 2.4rem; }
+
+  .hero h1 { font-size: 2.8rem; }
+
+  .mreza--2,
+  .mreza--3,
+  .mreza--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .forma__red {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statistika {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .podnozje__mreza {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .prevodilac__polja {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Računar: od 992px */
+@media (min-width: 992px) {
+  /* Meni se prikazuje u jednom redu, hamburger se sakriva */
+  .meni-dugme {
+    display: none;
+  }
+
+  .navigacija {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .navigacija ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 0;
+  }
+
+  .navigacija a {
+    position: relative;
+    padding: 0.4rem 0;
+  }
+
+  /* Animirana linija ispod linka */
+  .navigacija a:not(.dugme)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--boja-akcenat);
+    transition: width var(--prelaz);
+  }
+
+  .navigacija a:not(.dugme):hover::after,
+  .navigacija a.aktivno::after {
+    width: 100%;
+  }
+
+  .navigacija .dugme {
+    margin-top: 0;
+    padding: 0.45rem 1.2rem;
+  }
+
+  .hero {
+    padding: 6rem 0;
+  }
+
+  .hero__unutra {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero__tekst {
+    flex: 1 1 55%;
+  }
+
+  .hero__ilustracija {
+    flex: 1 1 40%;
+  }
+
+  .mreza--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .mreza--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dve-kolone {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .dve-kolone--kontakt {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+
+/* Mali telefoni: do 480px */
+@media (max-width: 480px) {
+  .sekcija {
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero__dugmad .dugme {
+    width: 100%;
+    text-align: center;
+  }
+
+  .kartica {
+    padding: 1.4rem;
+  }
+}

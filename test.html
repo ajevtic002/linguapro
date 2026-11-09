@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Besplatan online test nivoa znanja engleskog jezika – 15 pitanja i preporuka kursa.">
+  <meta name="author" content="Aleksandar Jevtić">
+  <title>Test znanja engleskog jezika | LinguaPro</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <div class="kontejner zaglavlje__unutra">
+      <a href="index.html" class="logo">
+        <span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span>
+      </a>
+
+      <button class="meni-dugme" type="button" aria-label="Otvori meni"
+              aria-expanded="false" aria-controls="glavni-meni">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="glavni-meni" class="navigacija" aria-label="Glavna navigacija">
+        <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="kursevi.html">Kursevi</a></li>
+        <li><a href="o-nama.html">O nama</a></li>
+        <li><a href="test.html" class="aktivno" aria-current="page">Test znanja</a></li>
+        <li><a href="prevodilac.html">Prevodilac</a></li>
+        <li><a href="kontakt.html" class="dugme dugme--malo">Upiši se</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="podnaslov-stranice">
+      <div class="kontejner">
+        <h1>Test znanja engleskog jezika</h1>
+        <p>15 pitanja &middot; oko 5 minuta &middot; rezultat odmah</p>
+      </div>
+    </section>
+
+    <section class="sekcija">
+      <div class="kontejner">
+        <div class="kartica test">
+
+          <!-- Početni ekran -->
+          <div id="test-pocetak">
+            <h2>Pre nego što počneš</h2>
+            <p>Test sadrži 15 pitanja poređanih od lakših ka težim. Za svako pitanje izaberi jedan odgovor. Ako ne znaš odgovor, izaberi onaj koji ti se čini najlogičnijim.</p>
+            <p class="napomena">Ovo je okvirna procena nivoa. Tačan nivo utvrđuje predavač na prvom času.</p>
+            <p style="margin-top:1.5rem"><button type="button" id="dugme-pocni" class="dugme">Započni test</button></p>
+          </div>
+
+          <!-- Pitanja -->
+          <div id="test-pitanja" class="skriveno">
+            <div class="test__napredak" aria-hidden="true"><div class="test__traka" id="traka"></div></div>
+            <p class="test__brojac" id="brojac">Pitanje 1 od 15</p>
+            <p class="test__pitanje" id="tekst-pitanja"></p>
+            <div class="test__odgovori" id="odgovori"></div>
+            <div class="test__kontrole">
+              <button type="button" id="dugme-dalje" class="dugme" disabled>Sledeće pitanje</button>
+            </div>
+          </div>
+
+          <!-- Rezultat -->
+          <div id="test-rezultat" class="rezultat skriveno" aria-live="polite">
+            <h2>Tvoj rezultat</h2>
+            <div class="rezultat__nivo" id="nivo">B1</div>
+            <p id="opis-nivoa"></p>
+            <p><strong id="broj-tacnih"></strong></p>
+            <div class="rezultat__dugmad">
+              <a href="kontakt.html" id="link-upis" class="dugme">Upiši preporučeni kurs</a>
+              <button type="button" id="dugme-ponovo" class="dugme dugme--obrubljeno">Uradi test ponovo</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="kontejner">
+      <div class="podnozje__mreza">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span></a>
+          <p>Škola stranih jezika za decu, srednjoškolce i odrasle. Učimo kroz razgovor, a ne napamet.</p>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Brzi linkovi</h2>
+          <ul>
+            <li><a href="kursevi.html">Kursevi i cene</a></li>
+            <li><a href="test.html">Test znanja</a></li>
+            <li><a href="prevodilac.html">Prevodilac</a></li>
+            <li><a href="kontakt.html">Upis i kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Kontakt</h2>
+          <address>
+            <ul>
+              <li>Trstenik, Srbija</li>
+              <li><a href="tel:+38137000000">+381 37 000 000</a></li>
+              <li><a href="mailto:info@linguapro.rs">info@linguapro.rs</a></li>
+              <li>Pon – Pet: 09 – 20 h</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+      <div class="podnozje__dno">
+        <p>&copy; 2026 LinguaPro &middot; Završni rad – Aleksandar Jevtić, Akademija strukovnih studija Šumadija, Odsek Trstenik</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/meni.js"></script>
+  <script src="js/test.js"></script>
+</body>
+</html>

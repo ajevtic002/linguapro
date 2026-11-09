@@ -1,0 +1,957 @@
+/* =========================================================
+   LinguaPro – škola stranih jezika
+   style.css – zajednički stilovi za sve stranice
+   Autor: Aleksandar Jevtić
+   ========================================================= */
+
+/* ---------- 1. CSS promenljive ---------- */
+:root {
+  --boja-primarna: #1e3a8a;
+  --boja-primarna-svetla: #3b5bdb;
+  --boja-akcenat: #f59e0b;
+  --boja-akcenat-tamna: #d97706;
+  --boja-tekst: #1f2937;
+  --boja-tekst-svetla: #596273;
+  --boja-pozadina: #ffffff;
+  --boja-pozadina-siva: #f3f6fb;
+  --boja-ivica: #e5e7eb;
+  --boja-uspeh: #15803d;
+  --boja-greska: #b91c1c;
+
+  --font-naslovi: "Poppins", Arial, sans-serif;
+  --font-tekst: "Open Sans", Arial, sans-serif;
+
+  --radijus: 12px;
+  --senka: 0 6px 20px rgba(30, 58, 138, 0.10);
+  --prelaz: 0.3s ease;
+  --sirina-kontejnera: 1140px;
+}
+
+/* ---------- 2. Osnovna podešavanja ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-tekst);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--boja-tekst);
+  background-color: var(--boja-pozadina);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--boja-primarna-svetla);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-naslovi);
+  line-height: 1.25;
+  color: var(--boja-primarna);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; }
+
+ul { list-style: none; }
+
+.kontejner {
+  width: 90%;
+  max-width: var(--sirina-kontejnera);
+  margin: 0 auto;
+}
+
+.sekcija {
+  padding: 4rem 0;
+}
+
+.sekcija--siva {
+  background-color: var(--boja-pozadina-siva);
+}
+
+.sekcija__naslov {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sekcija__naslov p {
+  color: var(--boja-tekst-svetla);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---------- 3. Dugmad ---------- */
+.dugme {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid var(--boja-akcenat);
+  border-radius: 50px;
+  background-color: var(--boja-akcenat);
+  color: #1f2937;
+  font-family: var(--font-naslovi);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--prelaz), transform var(--prelaz), box-shadow var(--prelaz);
+}
+
+.dugme:hover,
+.dugme:focus-visible {
+  background-color: var(--boja-akcenat-tamna);
+  border-color: var(--boja-akcenat-tamna);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(217, 119, 6, 0.35);
+}
+
+.dugme--obrubljeno {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.dugme--obrubljeno:hover,
+.dugme--obrubljeno:focus-visible {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: var(--boja-primarna);
+}
+
+.dugme--malo {
+  padding: 0.45rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.dugme:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- 4. Zaglavlje i navigacija ---------- */
+.zaglavlje {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--boja-pozadina);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.zaglavlje__unutra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-naslovi);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--boja-primarna);
+}
+
+.logo__tekst {
+  color: inherit !important;
+}
+
+.logo__tekst span {
+  color: var(--boja-akcenat-tamna);
+}
+
+.podnozje .logo__tekst span {
+  color: var(--boja-akcenat);
+}
+
+.logo__znak {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--boja-primarna);
+  color: #ffffff !important;
+  font-size: 1.2rem;
+}
+
+/* Hamburger dugme – vidljivo samo na manjim ekranima */
+.meni-dugme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.meni-dugme span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--boja-primarna);
+  transition: transform var(--prelaz), opacity var(--prelaz);
+}
+
+.meni-dugme.otvoren span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.meni-dugme.otvoren span:nth-child(2) { opacity: 0; }
+.meni-dugme.otvoren span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.navigacija {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: var(--boja-pozadina);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.navigacija.otvoren {
+  max-height: 420px;
+}
+
+.navigacija ul {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 5%;
+}
+
+.navigacija a {
+  display: block;
+  padding: 0.7rem 0;
+  color: var(--boja-tekst);
+  font-weight: 600;
+  transition: color var(--prelaz);
+}
+
+.navigacija a:hover,
+.navigacija a.aktivno {
+  color: var(--boja-primarna-svetla);
+}
+
+.navigacija .dugme {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #1f2937;
+}
+
+/* ---------- 5. Hero sekcija ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--boja-primarna) 0%, var(--boja-primarna-svetla) 100%);
+  color: #ffffff;
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.hero__unutra {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero__tekst {
+  animation: pojavljivanje 0.9s ease-out both;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--boja-akcenat);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.92;
+  margin-bottom: 1.8rem;
+}
+
+.hero__dugmad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__ilustracija {
+  width: 100%;
+  max-width: 420px;
+  animation: lebdenje 4s ease-in-out infinite;
+}
+
+.podnaslov-stranice {
+  background: linear-gradient(135deg, var(--boja-primarna) 0%, var(--boja-primarna-svetla) 100%);
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.podnaslov-stranice h1 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.podnaslov-stranice p {
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ---------- 6. Animacije ---------- */
+@keyframes pojavljivanje {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lebdenje {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ---------- 7. Kartice (prednosti, kursevi, predavači) ---------- */
+.mreza {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.kartica {
+  background-color: var(--boja-pozadina);
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+  padding: 1.8rem;
+  box-shadow: var(--senka);
+  transition: transform var(--prelaz), box-shadow var(--prelaz);
+}
+
+.kartica:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(30, 58, 138, 0.16);
+}
+
+.kartica__ikonica {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background-color: #e8eeff;
+  color: var(--boja-primarna);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.kartica p {
+  color: var(--boja-tekst-svetla);
+  margin-bottom: 0;
+}
+
+/* Kartica kursa */
+.kurs {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.kurs__zaglavlje {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 1.6rem;
+  background-color: var(--boja-pozadina-siva);
+}
+
+.kurs__oznaka {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: var(--font-naslovi);
+  font-weight: 700;
+}
+
+.oznaka--en { background-color: #1e3a8a; }
+.oznaka--de { background-color: #374151; }
+.oznaka--it { background-color: #15803d; }
+.oznaka--es { background-color: #b91c1c; }
+
+.kurs__zaglavlje h3 {
+  margin: 0;
+}
+
+.kurs__telo {
+  flex: 1;
+  padding: 1.4rem 1.6rem;
+}
+
+.kurs__telo ul li {
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  position: relative;
+  color: var(--boja-tekst-svetla);
+}
+
+.kurs__telo ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--boja-uspeh);
+  font-weight: 700;
+}
+
+.kurs__podnozje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.6rem 1.4rem;
+}
+
+.kurs__cena {
+  font-family: var(--font-naslovi);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--boja-primarna);
+}
+
+.kurs__cena small {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--boja-tekst-svetla);
+}
+
+.nivoi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.nivo {
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  background-color: #e8eeff;
+  color: var(--boja-primarna);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Kartica predavača */
+.predavac {
+  text-align: center;
+}
+
+.predavac__avatar {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--boja-primarna-svetla), var(--boja-primarna));
+  color: #ffffff;
+  font-family: var(--font-naslovi);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.predavac__jezik {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+/* ---------- 8. Utisci polaznika ---------- */
+.utisak {
+  position: relative;
+  padding-right: 3.5rem;
+}
+
+.utisak::before {
+  content: "“";
+  position: absolute;
+  top: -0.5rem;
+  right: 1.2rem;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  color: #e8eeff;
+}
+
+.utisak__autor {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--boja-primarna);
+}
+
+/* ---------- 9. Poziv na akciju ---------- */
+.poziv {
+  background-color: var(--boja-akcenat);
+  border-radius: var(--radijus);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.poziv h2 {
+  color: #1f2937;
+}
+
+.poziv .dugme {
+  background-color: var(--boja-primarna);
+  border-color: var(--boja-primarna);
+  color: #ffffff;
+}
+
+/* ---------- 10. Tabela cena ---------- */
+.omotac-tabele {
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background-color: var(--boja-pozadina);
+  box-shadow: var(--senka);
+  border-radius: var(--radijus);
+  overflow: hidden;
+}
+
+.tabela caption {
+  caption-side: top;
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--boja-tekst-svetla);
+}
+
+.tabela th,
+.tabela td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--boja-ivica);
+}
+
+.tabela thead th {
+  background-color: var(--boja-primarna);
+  color: #ffffff;
+  font-family: var(--font-naslovi);
+}
+
+.tabela tbody tr:nth-child(even) {
+  background-color: var(--boja-pozadina-siva);
+}
+
+.tabela tbody tr:hover {
+  background-color: #fff7e6;
+}
+
+/* ---------- 11. O nama ---------- */
+.dve-kolone {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.statistika {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.statistika__stavka {
+  background-color: var(--boja-pozadina-siva);
+  border-radius: var(--radijus);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.statistika__broj {
+  display: block;
+  font-family: var(--font-naslovi);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--boja-primarna);
+}
+
+/* ---------- 12. Test znanja ---------- */
+.test {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.test__napredak {
+  height: 10px;
+  border-radius: 10px;
+  background-color: var(--boja-ivica);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.test__traka {
+  height: 100%;
+  width: 0;
+  background-color: var(--boja-akcenat);
+  transition: width 0.4s ease;
+}
+
+.test__brojac {
+  font-size: 0.9rem;
+  color: var(--boja-tekst-svetla);
+  margin-bottom: 1.5rem;
+}
+
+.test__pitanje {
+  font-family: var(--font-naslovi);
+  font-size: 1.25rem;
+  color: var(--boja-primarna);
+  margin-bottom: 1.2rem;
+}
+
+.test__odgovori {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.odgovor {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 2px solid var(--boja-ivica);
+  border-radius: 10px;
+  background-color: var(--boja-pozadina);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--prelaz), background-color var(--prelaz);
+}
+
+.odgovor:hover {
+  border-color: var(--boja-primarna-svetla);
+}
+
+.odgovor.izabran {
+  border-color: var(--boja-primarna);
+  background-color: #e8eeff;
+  font-weight: 600;
+}
+
+.test__kontrole {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rezultat {
+  text-align: center;
+  animation: pojavljivanje 0.6s ease-out both;
+}
+
+.rezultat__nivo {
+  display: grid;
+  place-items: center;
+  width: 130px;
+  height: 130px;
+  margin: 1rem auto 1.5rem;
+  border-radius: 50%;
+  background-color: var(--boja-primarna);
+  color: #ffffff;
+  font-family: var(--font-naslovi);
+  font-size: 2.6rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 10px #e8eeff;
+}
+
+.rezultat__dugmad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.rezultat .dugme--obrubljeno {
+  color: var(--boja-primarna);
+  border-color: var(--boja-primarna);
+}
+
+.skriveno {
+  display: none !important;
+}
+
+/* ---------- 13. Prevodilac ---------- */
+.prevodilac {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.prevodilac__jezici {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.prevodilac__polja {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.zamena {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--boja-ivica);
+  border-radius: 50%;
+  background-color: var(--boja-pozadina);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform var(--prelaz), border-color var(--prelaz);
+}
+
+.zamena:hover {
+  transform: rotate(180deg);
+  border-color: var(--boja-primarna-svetla);
+}
+
+.prevod-izlaz {
+  min-height: 180px;
+  padding: 0.9rem 1rem;
+  border: 2px dashed var(--boja-ivica);
+  border-radius: 10px;
+  background-color: var(--boja-pozadina-siva);
+  white-space: pre-wrap;
+}
+
+.prevodilac__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.napomena {
+  font-size: 0.85rem;
+  color: var(--boja-tekst-svetla);
+  margin: 0;
+}
+
+/* ---------- 14. Forme ---------- */
+.forma {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.forma__red {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.polje label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.polje input,
+.polje select,
+.polje textarea,
+.prevodilac select,
+.prevodilac textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 2px solid var(--boja-ivica);
+  border-radius: 10px;
+  font: inherit;
+  background-color: var(--boja-pozadina);
+  transition: border-color var(--prelaz), box-shadow var(--prelaz);
+}
+
+.prevodilac select {
+  width: auto;
+  min-width: 170px;
+}
+
+.prevodilac textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.polje input:focus,
+.polje select:focus,
+.polje textarea:focus,
+.prevodilac select:focus,
+.prevodilac textarea:focus {
+  outline: none;
+  border-color: var(--boja-primarna-svetla);
+  box-shadow: 0 0 0 4px rgba(59, 91, 219, 0.15);
+}
+
+/* Prikaz neispravnog unosa tek kada je korisnik nešto upisao */
+.polje input:not(:placeholder-shown):invalid {
+  border-color: var(--boja-greska);
+}
+
+.polje small {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--boja-tekst-svetla);
+}
+
+.polje--saglasnost {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.polje--saglasnost input {
+  width: auto;
+  margin-top: 0.35rem;
+}
+
+.polje--saglasnost label {
+  font-weight: 400;
+}
+
+.poruka {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.poruka--uspeh {
+  background-color: #dcfce7;
+  color: var(--boja-uspeh);
+}
+
+.poruka--greska {
+  background-color: #fee2e2;
+  color: var(--boja-greska);
+}
+
+.kontakt-info li {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+}
+
+.kontakt-info strong {
+  display: block;
+  color: var(--boja-primarna);
+}
+
+.mapa {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: var(--radijus);
+  margin-top: 1rem;
+}
+
+/* ---------- 15. Podnožje ---------- */
+.podnozje {
+  background-color: #0f1d47;
+  color: #cbd5e1;
+  padding: 3rem 0 1rem;
+}
+
+.podnozje__mreza {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.podnozje__naslov {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.podnozje a {
+  color: #cbd5e1;
+  transition: color var(--prelaz);
+}
+
+.podnozje a:hover {
+  color: var(--boja-akcenat);
+}
+
+.podnozje li {
+  padding: 0.2rem 0;
+}
+
+.podnozje .logo {
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.podnozje__dno {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Tekst vidljiv samo čitačima ekrana (pristupačnost) */
+.samo-citac {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+address {
+  font-style: normal;
+}
+
+.navigacija a.dugme.aktivno {
+  color: #1f2937;
+}
+
+.kontakt-info li > span {
+  flex: 0 0 1.5rem;
+  text-align: center;
+}

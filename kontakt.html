@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prijavite se na kurs stranog jezika ili nam pošaljite pitanje.">
+  <meta name="author" content="Aleksandar Jevtić">
+  <title>Upis i kontakt | LinguaPro</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <div class="kontejner zaglavlje__unutra">
+      <a href="index.html" class="logo">
+        <span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span>
+      </a>
+
+      <button class="meni-dugme" type="button" aria-label="Otvori meni"
+              aria-expanded="false" aria-controls="glavni-meni">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="glavni-meni" class="navigacija" aria-label="Glavna navigacija">
+        <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="kursevi.html">Kursevi</a></li>
+        <li><a href="o-nama.html">O nama</a></li>
+        <li><a href="test.html">Test znanja</a></li>
+        <li><a href="prevodilac.html">Prevodilac</a></li>
+        <li><a href="kontakt.html" class="dugme dugme--malo aktivno">Upiši se</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="podnaslov-stranice">
+      <div class="kontejner">
+        <h1>Upis i kontakt</h1>
+        <p>Popuni formu i javićemo ti se u roku od 24 sata</p>
+      </div>
+    </section>
+
+    <section class="sekcija">
+      <div class="kontejner dve-kolone dve-kolone--kontakt">
+
+        <!-- Forma za upis -->
+        <form class="kartica forma" id="forma-upis"
+              action="https://formsubmit.co/ajevtic002@gmail.com" method="POST">
+          <h2>Prijava za kurs</h2>
+
+          <!-- Skrivena polja za servis FormSubmit -->
+          <input type="hidden" name="_subject" value="Nova prijava sa sajta LinguaPro">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="skriveno" tabindex="-1" autocomplete="off">
+
+          <div class="forma__red">
+            <div class="polje">
+              <label for="ime">Ime i prezime *</label>
+              <input type="text" id="ime" name="ime" placeholder="Petar Petrović" minlength="3" required>
+            </div>
+            <div class="polje">
+              <label for="email">E-mail adresa *</label>
+              <input type="email" id="email" name="email" placeholder="ime@primer.com" required>
+            </div>
+          </div>
+
+          <div class="forma__red">
+            <div class="polje">
+              <label for="telefon">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="06x xxx xxxx" pattern="[0-9 +]{6,20}">
+              <small>Samo cifre, razmak i znak +</small>
+            </div>
+            <div class="polje">
+              <label for="kurs">Kurs *</label>
+              <select id="kurs" name="kurs" required>
+                <option value="">-- izaberi kurs --</option>
+                <option>Engleski jezik</option>
+                <option>Engleski za IT</option>
+                <option>Nemački jezik</option>
+                <option>Italijanski jezik</option>
+                <option>Španski jezik</option>
+                <option>Engleski za decu</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="forma__red">
+            <div class="polje">
+              <label for="nivo">Procena nivoa</label>
+              <select id="nivo" name="nivo">
+                <option>Ne znam</option>
+                <option>A1</option>
+                <option>A2</option>
+                <option>B1</option>
+                <option>B2</option>
+                <option>C1</option>
+              </select>
+            </div>
+            <div class="polje">
+              <label for="termin">Željeni termin</label>
+              <select id="termin" name="termin">
+                <option>Pre podne</option>
+                <option>Popodne</option>
+                <option>Uveče</option>
+                <option>Vikendom</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="polje">
+            <label for="poruka">Poruka</label>
+            <textarea id="poruka" name="poruka" rows="4" placeholder="Pitanja, napomene, posebni zahtevi..."></textarea>
+          </div>
+
+          <div class="polje polje--saglasnost">
+            <input type="checkbox" id="saglasnost" name="saglasnost" value="Da" required>
+            <label for="saglasnost">Saglasan/na sam da LinguaPro koristi moje podatke isključivo radi odgovora na prijavu. *</label>
+          </div>
+
+          <div id="poruka-forme" class="poruka skriveno" role="status"></div>
+
+          <div><button type="submit" class="dugme" id="dugme-posalji">Pošalji prijavu</button></div>
+        </form>
+
+        <!-- Kontakt podaci -->
+        <aside>
+          <h2>Kontakt podaci</h2>
+          <address>
+            <ul class="kontakt-info">
+              <li><span aria-hidden="true">&#128205;</span><div><strong>Adresa</strong>Trstenik, Srbija</div></li>
+              <li><span aria-hidden="true">&#128222;</span><div><strong>Telefon</strong><a href="tel:+38137000000">+381 37 000 000</a></div></li>
+              <li><span aria-hidden="true">&#9993;</span><div><strong>E-mail</strong><a href="mailto:info@linguapro.rs">info@linguapro.rs</a></div></li>
+              <li><span aria-hidden="true">&#128339;</span><div><strong>Radno vreme</strong>Ponedeljak – petak: 09–20 h<br>Subota: 10–14 h</div></li>
+            </ul>
+          </address>
+          <iframe class="mapa" title="Mapa lokacije škole"
+                  src="https://maps.google.com/maps?q=Trstenik,%20Srbija&amp;z=14&amp;output=embed"
+                  loading="lazy"></iframe>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="kontejner">
+      <div class="podnozje__mreza">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span></a>
+          <p>Škola stranih jezika za decu, srednjoškolce i odrasle. Učimo kroz razgovor, a ne napamet.</p>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Brzi linkovi</h2>
+          <ul>
+            <li><a href="kursevi.html">Kursevi i cene</a></li>
+            <li><a href="test.html">Test znanja</a></li>
+            <li><a href="prevodilac.html">Prevodilac</a></li>
+            <li><a href="kontakt.html">Upis i kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Kontakt</h2>
+          <address>
+            <ul>
+              <li>Trstenik, Srbija</li>
+              <li><a href="tel:+38137000000">+381 37 000 000</a></li>
+              <li><a href="mailto:info@linguapro.rs">info@linguapro.rs</a></li>
+              <li>Pon – Pet: 09 – 20 h</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+      <div class="podnozje__dno">
+        <p>&copy; 2026 LinguaPro &middot; Završni rad – Aleksandar Jevtić, Akademija strukovnih studija Šumadija, Odsek Trstenik</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/meni.js"></script>
+  <script src="js/forma.js"></script>
+</body>
+</html>

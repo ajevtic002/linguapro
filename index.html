@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LinguaPro – škola engleskog, nemačkog, italijanskog i španskog jezika. Besplatan test nivoa znanja i online upis.">
+  <meta name="author" content="Aleksandar Jevtić">
+  <title>LinguaPro – Škola stranih jezika | Trstenik</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ZAGLAVLJE -->
+  <header class="zaglavlje">
+    <div class="kontejner zaglavlje__unutra">
+      <a href="index.html" class="logo">
+        <span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span>
+      </a>
+
+      <button class="meni-dugme" type="button" aria-label="Otvori meni"
+              aria-expanded="false" aria-controls="glavni-meni">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="glavni-meni" class="navigacija" aria-label="Glavna navigacija">
+        <ul>
+        <li><a href="index.html" class="aktivno" aria-current="page">Početna</a></li>
+        <li><a href="kursevi.html">Kursevi</a></li>
+        <li><a href="o-nama.html">O nama</a></li>
+        <li><a href="test.html">Test znanja</a></li>
+        <li><a href="prevodilac.html">Prevodilac</a></li>
+        <li><a href="kontakt.html" class="dugme dugme--malo">Upiši se</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SEKCIJA -->
+    <section class="hero">
+      <div class="kontejner hero__unutra">
+        <div class="hero__tekst">
+          <h1>Progovori strani jezik <span>sa samopouzdanjem</span></h1>
+          <p>Male grupe, iskusni predavači i nastava kroz razgovor. Proveri svoj nivo za pet minuta i pronađi kurs koji ti odgovara.</p>
+          <div class="hero__dugmad">
+            <a href="test.html" class="dugme">Uradi besplatan test</a>
+            <a href="kursevi.html" class="dugme dugme--obrubljeno">Pogledaj kurseve</a>
+          </div>
+        </div>
+        <svg class="hero__ilustracija" viewBox="0 0 400 320" role="img" aria-label="Ilustracija: oblačići razgovora na različitim jezicima">
+          <circle cx="200" cy="160" r="140" fill="rgba(255,255,255,0.08)"/>
+          <rect x="40" y="50" width="190" height="80" rx="20" fill="#ffffff"/>
+          <polygon points="80,130 100,130 70,155" fill="#ffffff"/>
+          <text x="135" y="100" text-anchor="middle" font-family="Poppins, Arial" font-size="30" font-weight="700" fill="#1e3a8a">Hello!</text>
+          <rect x="170" y="150" width="190" height="80" rx="20" fill="#f59e0b"/>
+          <polygon points="320,230 300,230 330,255" fill="#f59e0b"/>
+          <text x="265" y="200" text-anchor="middle" font-family="Poppins, Arial" font-size="30" font-weight="700" fill="#1f2937">Hallo!</text>
+          <rect x="60" y="235" width="150" height="60" rx="18" fill="#ffffff" opacity="0.9"/>
+          <text x="135" y="273" text-anchor="middle" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#1e3a8a">¡Hola!</text>
+          <rect x="250" y="30" width="120" height="54" rx="18" fill="#ffffff" opacity="0.9"/>
+          <text x="310" y="65" text-anchor="middle" font-family="Poppins, Arial" font-size="22" font-weight="700" fill="#15803d">Ciao!</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- PREDNOSTI -->
+    <section class="sekcija">
+      <div class="kontejner">
+        <div class="sekcija__naslov">
+          <h2>Zašto LinguaPro?</h2>
+          <p>Učenje jezika treba da bude korisno i prijatno. Zato smo nastavu organizovali drugačije.</p>
+        </div>
+        <div class="mreza mreza--4">
+          <article class="kartica">
+            <div class="kartica__ikonica" aria-hidden="true">&#128101;</div>
+            <h3>Male grupe</h3>
+            <p>Najviše šest polaznika u grupi, pa svako ima priliku da govori na svakom času.</p>
+          </article>
+          <article class="kartica">
+            <div class="kartica__ikonica" aria-hidden="true">&#127891;</div>
+            <h3>Iskusni predavači</h3>
+            <p>Profesori sa diplomom filološkog fakulteta i višegodišnjim iskustvom u nastavi.</p>
+          </article>
+          <article class="kartica">
+            <div class="kartica__ikonica" aria-hidden="true">&#128172;</div>
+            <h3>Fokus na razgovoru</h3>
+            <p>Gramatiku učimo kroz primere iz stvarnog života, a ne kroz bubanje pravila.</p>
+          </article>
+          <article class="kartica">
+            <div class="kartica__ikonica" aria-hidden="true">&#128220;</div>
+            <h3>Sertifikat</h3>
+            <p>Nakon svakog nivoa polaznik dobija sertifikat sa opisom stečenog znanja.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISTAKNUTI KURSEVI -->
+    <section class="sekcija sekcija--siva">
+      <div class="kontejner">
+        <div class="sekcija__naslov">
+          <h2>Najtraženiji kursevi</h2>
+          <p>Upis je u toku za grupe koje počinju naredne nedelje.</p>
+        </div>
+        <div class="mreza mreza--3">
+          <article class="kartica kurs">
+            <div class="kurs__zaglavlje"><span class="kurs__oznaka oznaka--en">EN</span><h3>Engleski za odrasle</h3></div>
+            <div class="kurs__telo"><p>Od osnova do tečnog razgovora, za posao i putovanja.</p></div>
+            <div class="kurs__podnozje"><span class="kurs__cena">6.500 <small>din / mes.</small></span><a href="kursevi.html" class="dugme dugme--malo">Detaljnije</a></div>
+          </article>
+          <article class="kartica kurs">
+            <div class="kurs__zaglavlje"><span class="kurs__oznaka oznaka--de">DE</span><h3>Nemački za posao</h3></div>
+            <div class="kurs__telo"><p>Priprema za rad i život u zemljama nemačkog govornog područja.</p></div>
+            <div class="kurs__podnozje"><span class="kurs__cena">7.000 <small>din / mes.</small></span><a href="kursevi.html" class="dugme dugme--malo">Detaljnije</a></div>
+          </article>
+          <article class="kartica kurs">
+            <div class="kurs__zaglavlje"><span class="kurs__oznaka oznaka--en">EN</span><h3>Engleski za IT</h3></div>
+            <div class="kurs__telo"><p>Stručni vokabular, dokumentacija, sastanci i razgovori za posao u IT-u.</p></div>
+            <div class="kurs__podnozje"><span class="kurs__cena">7.500 <small>din / mes.</small></span><a href="kursevi.html" class="dugme dugme--malo">Detaljnije</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UTISCI POLAZNIKA -->
+    <section class="sekcija">
+      <div class="kontejner">
+        <div class="sekcija__naslov">
+          <h2>Utisci polaznika</h2>
+        </div>
+        <div class="mreza mreza--3">
+          <blockquote class="kartica utisak">
+            <p>Posle dva semestra konačno mogu da pratim sastanke na engleskom bez stresa.</p>
+            <p class="utisak__autor">Marko, programer</p>
+          </blockquote>
+          <blockquote class="kartica utisak">
+            <p>Grupa je mala i profesorka svakome posveti pažnju. Preporučujem!</p>
+            <p class="utisak__autor">Jelena, studentkinja</p>
+          </blockquote>
+          <blockquote class="kartica utisak">
+            <p>Nemački sam učio zbog posla u Austriji. Položio sam B1 iz prvog pokušaja.</p>
+            <p class="utisak__autor">Nikola, tehničar</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- POZIV NA AKCIJU -->
+    <section class="sekcija sekcija--siva">
+      <div class="kontejner">
+        <div class="poziv">
+          <h2>Ne znaš koji nivo da upišeš?</h2>
+          <p>Odgovori na 15 kratkih pitanja i saznaj svoj nivo engleskog jezika.</p>
+          <a href="test.html" class="dugme">Pokreni test</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PODNOŽJE -->
+  <footer class="podnozje">
+    <div class="kontejner">
+      <div class="podnozje__mreza">
+        <div>
+          <a href="index.html" class="logo"><span class="logo__znak" aria-hidden="true">L</span><span class="logo__tekst">Lingua<span>Pro</span></span></a>
+          <p>Škola stranih jezika za decu, srednjoškolce i odrasle. Učimo kroz razgovor, a ne napamet.</p>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Brzi linkovi</h2>
+          <ul>
+            <li><a href="kursevi.html">Kursevi i cene</a></li>
+            <li><a href="test.html">Test znanja</a></li>
+            <li><a href="prevodilac.html">Prevodilac</a></li>
+            <li><a href="kontakt.html">Upis i kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="podnozje__naslov">Kontakt</h2>
+          <address>
+            <ul>
+              <li>Trstenik, Srbija</li>
+              <li><a href="tel:+38137000000">+381 37 000 000</a></li>
+              <li><a href="mailto:info@linguapro.rs">info@linguapro.rs</a></li>
+              <li>Pon – Pet: 09 – 20 h</li>
+            </ul>
+          </address>
+        </div>
+      </div>
+      <div class="podnozje__dno">
+        <p>&copy; 2026 LinguaPro &middot; Završni rad – Aleksandar Jevtić, Akademija strukovnih studija Šumadija, Odsek Trstenik</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/meni.js"></script>
+</body>
+</html>
